@@ -8,20 +8,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "FCAEF", "http://localhost:5
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_50595"
-		Debug.AspNetCompiler.PhysicalPath = "D:\clk\FCAEF\GIT\FCAEF\"
+		Debug.AspNetCompiler.PhysicalPath = "..\FCAEF\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50595\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_50595"
-		Release.AspNetCompiler.PhysicalPath = "D:\clk\FCAEF\GIT\FCAEF\"
+		Release.AspNetCompiler.PhysicalPath = "..\FCAEF\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_50595\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "D:\clk\FCAEF\GIT\FCAEF\"
+		SlnRelativePath = "..\FCAEF\"
 	EndProjectSection
 EndProject
 Global
