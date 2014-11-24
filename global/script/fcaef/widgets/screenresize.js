@@ -10,4 +10,5 @@ screenresize.init = function () {
         that.dispach(fcaef.events.ON_RESIZE, retObj);
     };
     $(window).resize(resizeTriggered);
+    that.dispach(fcaef.events.AFTER_INIT, {});
 };

@@ -3,6 +3,7 @@
  * @namespace
  */
 var fcaef = {};
+fcaef.global = {};
 /**
  * Framework version
  * @readonly
@@ -42,22 +43,27 @@ fcaef.loadWidgets = function () {
         var widgeUrl = "";
         if (widgetObj.type === fcaef.widget.type.DEFAULT) {
             widgeUrl = "global/script/fcaef/widgets/";
-        };
-        widgeUrl += widgetKey + ".js";
-        log("Loading widget..." + widgeUrl);
-        widgetsLoadList.push(widgeUrl);
-        new utils.scriptLoader(widgeUrl, onWidgetLoad);
+            widgeUrl += widgetKey + ".js";
+            log("Loading widget..." + widgeUrl);
+            widgetsLoadList.push(widgeUrl);
+            new utils.scriptLoader(widgeUrl, onWidgetLoad);
+        } else if (widgetObj.type === fcaef.widget.type.SYSTEM) {
+
+        };        
     };
 };
 fcaef.parseResource=function()
 {
     log("Parsing resources...");
     for (widgetKey in resources.widgets) {
-        log("Init.." + widgetKey);
-        window[widgetKey].data = resources.widgets[widgetKey].data;
-        window[widgetKey].init();
+        if (resources.widgets[widgetKey].type == fcaef.widget.type.SYSTEM) {
+            fcaef[widgetKey].data = resources.widgets[widgetKey].data;
+            fcaef[widgetKey].init();
+        } else {
+            window[widgetKey].data = resources.widgets[widgetKey].data;
+            window[widgetKey].init();
+        }
     };
-    fcaef.navigation.init();
 }
 $(function () {
     fcaef.init();

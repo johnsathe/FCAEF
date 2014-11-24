@@ -90,3 +90,21 @@ var log = function (str) {
         }
     } catch (e) { };
 };
+/**
+ * Print error log
+ * @param {object} str - String or Object
+ */
+var error = function (str) {
+    var logStr = new Date().toLocaleTimeString();
+    logStr += ":- " + str;
+    var logObj = null;
+    if (typeof (str) == "object") {
+        logObj = str;
+    };
+    try {
+        console.error(logStr);
+        if (logObj != null) {
+            console.error(logObj);
+        }
+    } catch (e) { };
+};

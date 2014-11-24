@@ -6,6 +6,7 @@
 fcaef.base = function () {
     this._events = [];
     this.required = [];
+    $.extend(this.events, fcaef.events);
     return this;
 };
 fcaef.base.prototype = {
@@ -44,11 +45,38 @@ fcaef.base.prototype = {
             };
         };
     },
+    check:function(event)
+    {
+        var ret = true;
+        for (var e = 0; e < this._events.length; e++) {
+            var eveObj = this._events[e];
+            if (eveObj.event == event) {
+                var retObj = {};
+                retObj.data = eveObj.data;
+                var cRet = eveObj.callBack(retObj);
+                if (cRet == false) {
+                    ret = false;
+                };
+            };
+        };
+        return ret;
+    },
     /**
      * Init widget
      */
     init: function () { },
-    _events:[],
+    _events: [],
+    events: {},
+    registerEvent:function(eventType){
+        if(String(eventType) in this.events)
+        {
+            log("event '" + eventType + "' already exist...");
+            return;
+        } else {
+            this.events[String(eventType)] = String(eventType);
+        }
+        
+    },
     required: [],
     /**
      * Widget data
@@ -67,6 +95,7 @@ fcaef.widget = {};
  * @readonly
  */
 fcaef.widget.type = {
-    DEFAULT: 0,
-    CUSTOM: 1
+    SYSTEM:0,
+    DEFAULT: 1,
+    CUSTOM: 2
 };
