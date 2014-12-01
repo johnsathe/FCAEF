@@ -5,10 +5,9 @@ backnext.init = function () {
     var target = $("#" + this.data.target);
     
     var str = "";
-    str += "<div class=\"row navholder\">";
-    str += " <div class=\"col-xs-4\"><button id=\"btnPrevious\" type=\"button\" class=\"btn\">Previous</button></div>";
-    str += " <div class=\"col-xs-4\">0 of 9</div>";
-    str += " <div class=\"col-xs-4\"><button id=\"btnNext\" type=\"button\" class=\"btn\">Next</button></div>";
+    str += "<div class=\"bottomnavholder\">";
+    str += "<div id=\"btnPrevious\"></div>";
+    str += "<div id=\"btnNext\"></div>";
     str += "</div>";
 
     target.html(str);

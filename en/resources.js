@@ -8,7 +8,19 @@
                 {
                     id: "mainRow1",
                     css: "topBand",
-                    height:56
+                    height: 112,
+                    cols: [
+                        {
+                            id: "topbandleft",
+                            css:"topbandcols",
+                            width:410
+                        },
+                        {
+                            id: "topbandright",
+                            css: "topbandcols",
+                             width: "auto"
+                        }
+                    ]
                 },
                 {
                     id: "mainRow2",
@@ -19,19 +31,32 @@
                 {
                     id: "mainRow3",
                     css: "botBand",
-                    height: 60,
+                    height: 50,
                     cols: [
                         {
-                            id: "menuHolder",
-                            css: "col-md-1"
+                            id: "bottomcol1",
+                            css:"bottomcol",
+                            width: 27
                         },
                         {
-                            id: "slider",
-                            css: "col-md-8"
+                            id: "bottomcol2",
+                            css:"bottomcol",
+                            width: 35
                         },
                         {
-                            id: "navbuttons",
-                            css: "col-xs-3"
+                            id: "bottomcol3",
+                            css: "bottomcol",
+                            width: 87
+                        },
+                        {
+                            id: "bottomcol4",
+                            css: "bottomcol",
+                            width: 119
+                        },
+                        {
+                            id: "bottomcol5",
+                            css: "bottomcol",
+                            width: "auto"
                         }
                     ]
                 }
@@ -40,7 +65,7 @@
         backnext: {
             type: fcaef.widget.type.DEFAULT,
             data: {
-                target: "navbuttons"
+                target: "backnextholder"
             }
         },
         templates: {

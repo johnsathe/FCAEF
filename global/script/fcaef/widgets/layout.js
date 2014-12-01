@@ -21,7 +21,7 @@ layout.init = function () {
         if ($.isArray(rowData.cols)) {
             for (var c = 0; c < rowData.cols.length; c++) {
                 var colData=rowData.cols[c];
-                thisRow.append("<div id=\"" + colData.id + "\">Hello</div>");
+                thisRow.append("<div id=\"" + colData.id + "\">&nbsp;</div>");
                 var thisCol = thisRow.find("#" + colData.id);
                 if (colData.css) {
                     thisCol.addClass(colData.css);
@@ -29,12 +29,11 @@ layout.init = function () {
             };
         };
     };
+
+    mainBody.find("#bottomcol5").append("<div id=\"backnextholder\"></div>");
+
     screenresize.on(fcaef.events.ON_RESIZE, {}, function (dims) { that.onScreenResize(dims) });
     $(window).resize();
-
-    //mainBody.find("#mainRow3").append("<div id=\"navBtnHolder\" class=\"col-md-2 col-md-offset-10\"></div>");
-    //mainBody.find("#navBtnHolder").append("<button type=\"button\"  class=\"btn btn-default\">Previous</button>");
-
     this.dispach(fcaef.events.AFTER_INIT);
 };
 layout.onScreenResize = function (dims) {
@@ -61,6 +60,34 @@ layout.onScreenResize = function (dims) {
             $row.css({
                 "height": eachAutoHeight
             });
-        }
-    }
+        };
+        
+        if ($.isArray(rowData.cols)) {
+            var totalFixedWidth = 0;
+            var noOfAutoWidth = 0;
+            for (var c = 0; c < rowData.cols.length; c++) {
+                var colData = rowData.cols[c];
+                var thisCol = $row.find("#" + colData.id);
+                if (colData.width != "auto") {
+                    thisCol.css({
+                        "width": colData.width
+                    });
+                    totalFixedWidth += colData.width
+                } else {
+                    noOfAutoWidth++;
+                }
+            };
+            var remWidthForAuto = dims.width - totalFixedWidth;
+            var eachAutoWidth = remWidthForAuto / noOfAutoWidth;
+            for (var c = 0; c < rowData.cols.length; c++) {
+                var colData = rowData.cols[c];
+                var thisCol = $row.find("#" + colData.id);
+                if (colData.width == "auto") {
+                    thisCol.css({
+                        "width": eachAutoWidth
+                    });
+                };
+            };
+        };
+    };
 };

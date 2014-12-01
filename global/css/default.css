@@ -8,19 +8,82 @@
   padding: 0;
 }
 .topBand {
-  height: 100px;
-  background-color: grey;
-  background-image: url('images/header.jpg');
+  height: 112px;
 }
 .botBand {
   position: relative;
   bottom: 0;
-  height: 20px;
-  background-color: grey;
-  background-image: url('images/footer.jpg');
 }
-.navholder {
-  min-width: 280px;
-  padding-top: 15px;
+.topbandcols {
+  float: left;
+}
+#topbandleft {
+  background-image: url('images/headerLeft.png');
+  background-repeat: no-repeat;
+  height: 112px;
+}
+#topbandright {
+  background-image: url('images/headerRight.png');
+  background-repeat: repeat-x;
+  height: 112px;
+}
+.bottomcol {
+  float: left;
+}
+#bottomcol1 {
+  background-color: #bde76b;
+}
+#bottomcol2 {
+  background-color: #7ca62a;
+}
+#bottomcol3 {
+  background-color: #538610;
+}
+#bottomcol4 {
+  background-color: #f7ba00;
+}
+#bottomcol5 {
+  background-color: #f3ca3e;
+}
+#bottomcol6 {
+  background-color: #f3ca3e;
+}
+/* Nav buttons */
+.bottomnavholder {
+  position: absolute;
+  right: 15px;
+  top: -15px;
+}
+.roundbutton {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+}
+.roundbutton[disabled] {
+  cursor: default;
+  opacity: 0.6;
+}
+#btnPrevious {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  background-image: url('images/back.png');
+  float: left;
+}
+#btnPrevious[disabled] {
+  cursor: default;
+  opacity: 0.6;
+}
+#btnNext {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  background-image: url('images/next.png');
+  float: left;
+  margin-left: 20px;
+}
+#btnNext[disabled] {
+  cursor: default;
+  opacity: 0.6;
 }
 /*# sourceMappingURL=default.css.map */

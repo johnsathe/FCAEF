@@ -1,0 +1,13 @@
+Footer color code
+
+light green - width 27 height 32  - #bde76b
+
+mild green (audio icon) - width 35 height 32  - #7ca62a
+
+dark green text patch (Audio On/Off) - width 87 height 32  - #538610
+
+dark yellow (Menu icon and Text Patch) - width 119 height 32 - #f7ba00
+
+Light Yellow (Page numbering patch) - width 756 height 32  - #f3ca3e
+
+Font Arial
