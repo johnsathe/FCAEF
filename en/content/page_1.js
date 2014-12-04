@@ -1,8 +1,8 @@
 var screen = new fcaef.base();
 screen.templateData = [
  {
-     Type: fcaef.templates.type.SINGLE_LINE,
      ID: "Txt2",
+     Type: fcaef.templates.type.SINGLE_LINE,
      Text: "Dummy Text",
  }
 ];

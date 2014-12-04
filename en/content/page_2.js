@@ -1,8 +1,9 @@
 var screen = new fcaef.base();
 screen.templateData = [
  {
-     Type: fcaef.templates.type.SINGLE_IMAGE,
      ID: "Img345",
+     ID: "Img345",
+     Type: fcaef.templates.type.SINGLE_IMAGE,
      Path: "media/page_0/img1.jpg",
  }
 ];
