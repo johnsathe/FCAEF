@@ -4,7 +4,7 @@ screenresize.init = function () {
     var resizeTriggered=function()
     {
         var retObj = {
-            width: $(window).width(),
+            width: $(window).width()-20,
             height: $(window).height()
         };
         that.dispach(fcaef.events.ON_RESIZE, retObj);

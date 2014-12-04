@@ -14,6 +14,9 @@
   position: relative;
   bottom: 0;
 }
+.middleBand {
+  padding: 10px;
+}
 .topbandcols {
   float: left;
 }
@@ -29,6 +32,7 @@
 }
 .bottomcol {
   float: left;
+  height: 30px;
 }
 #bottomcol1 {
   background-color: #bde76b;
@@ -49,10 +53,13 @@
   background-color: #f3ca3e;
 }
 /* Nav buttons */
+#backnextholder {
+  position: relative;
+}
 .bottomnavholder {
   position: absolute;
   right: 15px;
-  top: -15px;
+  top: -30px;
 }
 .roundbutton {
   width: 46px;
@@ -85,5 +92,56 @@
 #btnNext[disabled] {
   cursor: default;
   opacity: 0.6;
+}
+/* Audio */
+#btnAudio {
+  width: 26px;
+  height: 26px;
+  background-image: url('images/audio_icon.png');
+  margin: 2px 0 0 2px;
+}
+#txtAudioText {
+  color: white;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+/* titles */
+#moduleNameHolder {
+  margin-top: 35px;
+  color: #f0f5fa;
+}
+#moduleName {
+  font-size: 27px;
+}
+#pageName {
+  font-size: 16px;
+}
+/* menu button */
+#btnMenu > div {
+  float: left;
+}
+#btnMenu .menuicon {
+  width: 32px;
+  height: 28px;
+  background-image: url('images/menu_icon.png');
+  margin: 1px 6px 0 2px;
+}
+#btnMenu .menutext {
+  color: white;
+  text-align: center;
+  margin: 5px 0 0 0;
+}
+/* Content */
+.bold-text {
+  font-weight: bold;
+}
+.italic-text {
+  font-style: italic;
+}
+.gutter10 {
+  padding: 10px;
+}
+.gutter10-t {
+  padding-top: 10px;
 }
 /*# sourceMappingURL=default.css.map */

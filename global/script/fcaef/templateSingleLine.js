@@ -4,9 +4,13 @@ fcaef.templateSingleLine.init = function () {
     log("Template -> SingleLine... Loaded");
 };
 fcaef.templateSingleLine.render = function (obj) {
-    var retStr = "";
+    var $obj = $("<div></div>");
     if ((typeof obj.Text) == "string") {
-        retStr += "<div id=\""+obj.ID+"\">" + obj.Text + "</div>";
+        $obj.attr("id", obj.ID);
+        $obj.append(obj.Text);
     };
-    return retStr;
+    if ((typeof obj.CSS) == "string") {
+        $obj.addClass(obj.CSS);
+    };
+    return $obj.get(0).outerHTML;
 };

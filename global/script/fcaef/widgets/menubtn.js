@@ -1,0 +1,14 @@
+﻿var menubtn = new fcaef.base();
+menubtn.init = function () {
+    var $btnholder = $("#" + this.data.btnholder);
+
+    var str = "";    
+    str += "<div id=\"btnMenu\">";
+    str += "    <div class=\"menuicon\"></div>";
+    str += "    <div class=\"menutext\">" + resources.string.global.menu + "</div>";
+    str += "    <div></div>";
+    str += "</div>";
+
+    $btnholder.html(str);
+
+};

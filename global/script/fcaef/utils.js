@@ -84,10 +84,12 @@ var log = function (str) {
         logObj = str;
     };
     try {
+        /* ##no_release start## */
         console.log(logStr);
         if (logObj != null) {
             console.log(logObj);
         }
+        /* ##no_release end## */
     } catch (e) { };
 };
 /**

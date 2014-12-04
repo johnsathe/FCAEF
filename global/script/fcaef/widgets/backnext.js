@@ -1,7 +1,6 @@
 ﻿var backnext = new fcaef.base();
 backnext.target = null;
 backnext.init = function () {
-    log("Widget backnext init...");
     var target = $("#" + this.data.target);
     
     var str = "";

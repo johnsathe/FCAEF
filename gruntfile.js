@@ -6,6 +6,14 @@ obfuscateObj[releasePath+'/FCAEF/global/script/fcaef_min.js']=[releasePath+'/FCA
 module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        jsdoc: {
+            dist: {
+                src: ['global/script/fcaef/*.js'],
+                options: {
+                    destination: 'docs'
+                }
+            }
+        },
         // define source files and their destinations
         copy: {
             main: {
@@ -28,6 +36,12 @@ module.exports = function (grunt) {
                             var endIndex = String(content).indexOf(endStr);
                             var strToReplace = String(content).substr(strIndex, (endIndex - strIndex) + (endStr.length));
                             return content.replace(strToReplace, '<script type="text/javascript" src="global/script/fcaef_min.js"></script>');
+                        } else if(String(srcpath).indexOf(".js") > 0 ){
+                            var strIndex = String(content).indexOf('/* ##no_release start## */');
+                            var endStr = '/* ##no_release end## */';
+                            var endIndex = String(content).indexOf(endStr);
+                            var strToReplace = String(content).substr(strIndex, (endIndex - strIndex) + (endStr.length));
+                            return content.replace(strToReplace, '');                            
                         } else {
                             return content;
                         }
@@ -36,10 +50,10 @@ module.exports = function (grunt) {
                 },
                 files: [
                   { expand: true, src: ['../FCAEF/global/**'], dest: releasePath+'/global/' },
-                  { expand: true, src: ['../FCAEF/en/**'], dest: releasePath+'/en/' },
-                  { expand: true, src: ['../FCAEF/config.js'], dest: releasePath+'/config.js' },
+                  { expand: true, src: ['../FCAEF/en/**'], dest: releasePath + '/en/' },
+                  { expand: true, src: ['../FCAEF/config.js'], dest: releasePath + '/config.js' },
                   {
-                      expand: true, src: ['../FCAEF/index.html'], dest: releasePath+'/index.html'
+                      expand: true, src: ['../FCAEF/index.html'], dest: releasePath + '/index.html'
                       
                   }
                 ]
@@ -95,9 +109,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('js-obfuscator');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-jsdoc');
 
     // register at least this one task
-    grunt.registerTask('default', ['copy', 'uglify', 'concat', 'jsObfuscate','clean']);
+    grunt.registerTask('default', ['jsdoc','copy', 'uglify', 'concat', 'jsObfuscate','clean']);
 
 
 };

@@ -16,19 +16,23 @@ fcaef.navigation.init = function () {
         error("'resources.menu' is not an Array");
         return;
     };
-    fcaef.global.CURRENT_PAGE_ID = 0;    
+    fcaef.global.CURRENT_PAGE_ID = 0;
+    fcaef.global.CURRENT_PAGE_OBJECT = null;
     this.dispach(fcaef.events.AFTER_INIT, {});
     fcaef.navigation.loadPage();
 };
 fcaef.navigation.loadPage = function () {
     if (!this.check(this.events.BEFORE_PAGE_LOAD)) { return; }
     var pageToLoadObj = resources.menu[fcaef.global.CURRENT_PAGE_ID];
+    $.extend(pageToLoadObj, resources.menu[fcaef.global.CURRENT_PAGE_ID]);
+    fcaef.global.CURRENT_PAGE_OBJECT = pageToLoadObj;
     if (pageToLoadObj == null || (typeof pageToLoadObj) != "object") {
         error("invalid page object in resource.menu at index " + fcaef.global.CURRENT_PAGE_ID);
         return;
     };
+    
     this.dispach(this.events.PAGE_LOAD_STARTED, { PageID: fcaef.global.CURRENT_PAGE_ID, TotalPages: resources.menu.length });
-    var pageURL = config.lang + "/content/" + pageToLoadObj.pageID + ".js";
+    var pageURL = fcaef.global.LANG + "/content/" + pageToLoadObj.pageID + ".js";
     log("loading page..." + pageURL);
     var that = this;
     new utils.scriptLoader(pageURL, function () { that.dispach(that.events.AFTER_PAGE_LOAD, {}); that.pageJSLoaded() });

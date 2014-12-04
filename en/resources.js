@@ -70,15 +70,40 @@
         },
         templates: {
             type: fcaef.widget.type.SYSTEM
-        },
+        }, 
         renderer: {
             type: fcaef.widget.type.SYSTEM
         },
         templateSingleLine: {
             type: fcaef.widget.type.SYSTEM
-        },        
+        },
+        templateSingleImage: {
+            type: fcaef.widget.type.SYSTEM
+        },
+        templateLeftTextRightImage: {
+            type: fcaef.widget.type.DEFAULT
+        },
         navigation: {
             type: fcaef.widget.type.SYSTEM
+        },
+        title: {
+            type: fcaef.widget.type.DEFAULT,
+            data: {
+                titleHolder: "topbandright"
+            }
+        },
+        menubtn: {
+            type: fcaef.widget.type.DEFAULT,
+            data: {
+                btnholder: "bottomcol4"
+            }
+        },
+        audiobtn: {
+            type: fcaef.widget.type.DEFAULT,
+            data: {
+                iconholder: "bottomcol2",
+                auditextholder: "bottomcol3"
+            }
         }
     },
     menu: [
@@ -87,3 +112,8 @@
         { pageID: "page_2", title: "Screen 3" }
     ]
 };
+resources.string = {};
+resources.string.global = {};
+resources.string.global.audioOn = "Audio On";
+resources.string.global.menu = "Menu";
+

@@ -15,11 +15,12 @@ fcaef.version = "0.1";
  * Init application
  */
 fcaef.init = function () {
+    fcaef.global.LANG = config.lang;
     log("Initalizing started...");
     log("Application framework version " + fcaef.version);
-    log("Loading resources from \"" + config.lang + "\" folder");
+    log("Loading resources from \"" + fcaef.global.LANG + "\" folder");
     
-    utils.scriptLoader(config.lang + "/resources.js", function () {
+    utils.scriptLoader(fcaef.global.LANG + "/resources.js", function () {
         log("Resources loaded...");
         fcaef.loadWidgets();
     });
@@ -58,9 +59,11 @@ fcaef.parseResource=function()
     for (widgetKey in resources.widgets) {
         if (resources.widgets[widgetKey].type == fcaef.widget.type.SYSTEM) {
             fcaef[widgetKey].data = resources.widgets[widgetKey].data;
+            log("Widget \"" + widgetKey + "\" init...");
             fcaef[widgetKey].init();
         } else {
             window[widgetKey].data = resources.widgets[widgetKey].data;
+            log("Widget \"" + widgetKey + "\" init...");
             window[widgetKey].init();
         }
     };

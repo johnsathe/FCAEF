@@ -3,7 +3,6 @@ layout.required=['screenresize']
 layout.init = function () {
     if (!this.check(fcaef.events.BEFORE_INIT)) { return;}
     var that=this;
-    log("Widget layout init...");
     $("body").html("<div id=\"mainBody\" class=\"container-fluid\"></div>");
     var mainBody = $("#mainBody");
     for (var i = 0; i < this.data.length; i++) {
@@ -52,6 +51,11 @@ layout.onScreenResize = function (dims) {
         }
     };
     var remHeightForAuto = dims.height - totalFixedHeight;
+
+    var actualContentHeight = $("#mainRow2")[0].offsetHeight;
+
+    if (actualContentHeight > remHeightForAuto) { remHeightForAuto = (actualContentHeight) };
+
     var eachAutoHeight = remHeightForAuto / noOfAutoHeight;
     for (var i = 0; i < this.data.length; i++) {
         var rowData = this.data[i];

@@ -1,16 +1,9 @@
-﻿var screen = new fcaef.base();
+var screen = new fcaef.base();
 screen.templateData = [
-    {
-        ID: "txt1",
-        Type: fcaef.templates.type.SINGLE_LINE,
-        Text:"Hello world 22222"
-    },
-    {
-        ID: "txt2",
-        Type: fcaef.templates.type.SINGLE_LINE,
-        Text: "Hello Manish 222"
-    }
+ {
+     Type: fcaef.templates.type.SINGLE_LINE,
+     ID: "Txt2",
+     Text: "Dummy Text",
+ }
 ];
-screen.init = function () {
-    fcaef.renderer.render(screen.templateData);
-};
+screen.init = function () { fcaef.renderer.render(screen.templateData); };
