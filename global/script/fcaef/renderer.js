@@ -16,6 +16,7 @@ fcaef.renderer.render = function (pageData) {
 };
 fcaef.renderer.render1 = function (pageData) {
     var retStr = "";
+    if (pageData == undefined) { return "" };
     for (var i = 0; i < pageData.length; i++) {
         var dispObj = pageData[i];
         retStr += this.render2(dispObj);

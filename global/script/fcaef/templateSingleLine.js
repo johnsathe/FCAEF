@@ -8,9 +8,23 @@ fcaef.templateSingleLine.render = function (obj) {
     if ((typeof obj.Text) == "string") {
         $obj.attr("id", obj.ID);
         $obj.append(obj.Text);
+    } else if ($.isArray(obj.Text)) {
+        $obj = $(fcaef.renderer.render1(obj.Text));
     };
+
     if ((typeof obj.CSS) == "string") {
         $obj.addClass(obj.CSS);
     };
-    return $obj.get(0).outerHTML;
+
+    var ret = "";
+
+    if ($obj.length > 1) {
+        for (var i = 0; i < $obj.length; i++) {
+            ret += $obj.get(i).outerHTML;
+        };
+    } else {
+        ret = $obj.get(0).outerHTML;
+    }
+
+    return ret;
 };
