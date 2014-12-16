@@ -117,6 +117,9 @@
   font-size: 16px;
 }
 /* menu button */
+#btnMenu {
+  cursor: pointer;
+}
 #btnMenu > div {
   float: left;
 }
@@ -130,6 +133,51 @@
   color: white;
   text-align: center;
   margin: 5px 0 0 0;
+}
+/* Menu */
+#menuholder {
+  position: absolute;
+  top: 125px;
+  left: 0;
+  width: 250px;
+  background-color: #3c77b6;
+  color: #dce4ed;
+}
+#menuholder .title {
+  background-color: #f7ba00;
+  color: white;
+  padding: 10px;
+  font-size: 17px;
+}
+#menuholder #menulistholder {
+  padding: 10px;
+}
+#menuholder #menulistholder .list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+#menuholder #menulistholder .list > div {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+#menuholder #menulistholder .list > div:before {
+  content: "\25CA";
+  font-size: 18px;
+  margin-right: 4px;
+  color: #f7ba00;
+}
+#menuholder #menulistholder .list > div[current] {
+  cursor: default;
+  font-weight: bold;
+}
+#menuholder #menulistholder .list > div[current]:before {
+  content: "\2666";
+  font-size: 18px;
+  margin-right: 4px;
+}
+#menuholder #menulistholder .list > div:hover:before {
+  content: "\2666";
+  font-size: 18px;
 }
 /* Content */
 .bold-text {

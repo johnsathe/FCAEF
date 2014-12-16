@@ -18,8 +18,25 @@ fcaef.navigation.init = function () {
     };
     fcaef.global.CURRENT_PAGE_ID = 0;
     fcaef.global.CURRENT_PAGE_OBJECT = null;
+    var that = this;
+    fcaef.global.on(fcaef.global.events.NAVIGATE_TO_PAGEID, {}, function (e) { that.loadPageByPageId(e); });
+
     this.dispach(fcaef.events.AFTER_INIT, {});
     fcaef.navigation.loadPage();
+};
+fcaef.navigation.loadPageByPageId = function (e) {
+    var idx = null;
+    for (var i = 0; i < this.resMenuData.length; i++) {
+        if(this.resMenuData[i].pageID==e.pageID)
+        {
+            idx = i;
+        }
+    };
+    if (idx != fcaef.global.CURRENT_PAGE_ID)
+    {
+        fcaef.global.CURRENT_PAGE_ID = idx;
+        fcaef.navigation.loadPage();
+    }
 };
 fcaef.navigation.loadPage = function () {
     if (!this.check(this.events.BEFORE_PAGE_LOAD)) { return; }

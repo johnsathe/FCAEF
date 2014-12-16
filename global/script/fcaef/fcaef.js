@@ -15,6 +15,13 @@ fcaef.version = "0.1";
  * Init application
  */
 fcaef.init = function () {
+    fcaef.global = new fcaef.base();
+
+    fcaef.global.registerEvent("OPEN_MENU");
+    fcaef.global.registerEvent("CLOSE_MENU");
+    fcaef.global.registerEvent("TOGGLE_MENU");
+    fcaef.global.registerEvent("NAVIGATE_TO_PAGEID");
+
     fcaef.global.LANG = config.lang;
     log("Initalizing started...");
     log("Application framework version " + fcaef.version);
