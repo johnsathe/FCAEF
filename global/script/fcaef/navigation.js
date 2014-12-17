@@ -47,7 +47,7 @@ fcaef.navigation.loadPage = function () {
         error("invalid page object in resource.menu at index " + fcaef.global.CURRENT_PAGE_ID);
         return;
     };
-    
+    fcaef.global.dispach(fcaef.global.events.REMOVE_EXTRAS, {});
     this.dispach(this.events.PAGE_LOAD_STARTED, { PageID: fcaef.global.CURRENT_PAGE_ID, TotalPages: resources.menu.length });
     var pageURL = fcaef.global.LANG + "/content/" + pageToLoadObj.pageID + ".js";
     log("loading page..." + pageURL);

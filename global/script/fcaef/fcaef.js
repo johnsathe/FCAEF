@@ -17,8 +17,7 @@ fcaef.version = "0.1";
 fcaef.init = function () {
     fcaef.global = new fcaef.base();
 
-    fcaef.global.registerEvent("OPEN_MENU");
-    fcaef.global.registerEvent("CLOSE_MENU");
+    fcaef.global.registerEvent("REMOVE_EXTRAS");
     fcaef.global.registerEvent("TOGGLE_MENU");
     fcaef.global.registerEvent("NAVIGATE_TO_PAGEID");
 

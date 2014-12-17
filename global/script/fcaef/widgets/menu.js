@@ -23,6 +23,7 @@ menu.init = function () {
     });
     fcaef.navigation.on(fcaef.navigation.events.PAGE_LOAD_COMPLETE, {}, function (e) { that.updateState(e); });
     fcaef.global.on(fcaef.global.events.TOGGLE_MENU, {}, function (e) { that.ontoggle(e); });
+    fcaef.global.on(fcaef.global.events.REMOVE_EXTRAS, {}, function (e) { that._defState = "open"; that.ontoggle(e); });
 };
 menu.onItemClicked = function (e) {
     fcaef.global.dispach(fcaef.global.events.NAVIGATE_TO_PAGEID, { pageID: e.obj.pageID });

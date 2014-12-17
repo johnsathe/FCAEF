@@ -6,6 +6,7 @@
 fcaef.base = function () {
     this._events = [];
     this.required = [];
+    this.events = {};
     $.extend(this.events, fcaef.events);
     return this;
 };
