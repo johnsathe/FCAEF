@@ -98,7 +98,10 @@ module.exports = function (grunt) {
             js: ["release/FCAEF/global/script/built.js","release/FCAEF/global/script/built", "release/FCAEF/global/script/fcaef/*.js"]
         },
         watch: {
-            js: { files: 'global/script/fcaef/*.js', tasks: ['uglify'] },
+            scripts: {
+                files: 'global/script/fcaef/*.js',
+                tasks: ['default']
+            },
         }
     });
 
@@ -114,5 +117,8 @@ module.exports = function (grunt) {
     // register at least this one task
     grunt.registerTask('default', ['jsdoc','copy', 'uglify', 'concat', 'jsObfuscate','clean']);
 
+    grunt.event.on('watch', function (action, filepath, target) {
+        grunt.log.writeln(target + ': ' + filepath + ' has ' + action);
+    });
 
 };

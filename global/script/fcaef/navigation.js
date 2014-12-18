@@ -57,7 +57,7 @@ fcaef.navigation.loadPage = function () {
 fcaef.navigation.pageJSLoaded = function () {    
     if (!this.check(this.events.BEFORE_PAGE_INIT)) { return; }
     log("pageJS loaded");
-    screen.init();
+    page.init();
     this.dispach(this.events.AFTER_PAGE_INIT, {});
     this.dispach(this.events.PAGE_LOAD_COMPLETE, { PageID: fcaef.global.CURRENT_PAGE_ID, TotalPages: resources.menu.length});
 };

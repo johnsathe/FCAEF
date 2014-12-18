@@ -25,6 +25,12 @@ fcaef.init = function () {
     log("Initalizing started...");
     log("Application framework version " + fcaef.version);
     log("Loading resources from \"" + fcaef.global.LANG + "\" folder");
+
+    var fileref = document.createElement("link")
+    fileref.setAttribute("rel", "stylesheet")
+    fileref.setAttribute("type", "text/css")
+    fileref.setAttribute("href", fcaef.global.LANG + "/style/custom.min.css");
+    document.getElementsByTagName("head")[0].appendChild(fileref)
     
     utils.scriptLoader(fcaef.global.LANG + "/resources.js", function () {
         log("Resources loaded...");
