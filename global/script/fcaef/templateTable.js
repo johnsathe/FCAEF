@@ -5,6 +5,12 @@ fcaef.templateTable.init = function () {
 fcaef.templateTable.render = function (obj) {
 
     var $retObj = $("<div></div>");
+    if (obj.CSS) {
+        $retObj.addClass(obj.CSS);
+    };
+    if (obj.ID) {
+        $retObj.attr("id",obj.ID);
+    };
     var $table = $("<table></table>");
     if ($.isArray(obj.Table) == false) { error("Invalid table object, expected array"); return; }
     for (var i = 0; i < obj.Table.length; i++) {

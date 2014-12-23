@@ -202,4 +202,37 @@
 .gutter10-t {
   padding-top: 10px;
 }
+.margin-t5 {
+  margin-top: 5px;
+}
+.margin-t10 {
+  margin-top: 10px;
+}
+.margin-b5 {
+  margin-top: 5px;
+}
+.margin-b10 {
+  margin-top: 10px;
+}
+/* audi sync */
+.hideme {
+  opacity: 0;
+}
+.showme {
+  opacity: 1;
+}
+.fadeIn {
+  opacity: 1;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+.fadeOut {
+  opacity: 0;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
 /*# sourceMappingURL=default.css.map */

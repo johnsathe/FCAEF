@@ -29,7 +29,27 @@ fcaef.base.prototype = {
      * Remove event
      * @abstract
      */
-    off: function (event, callBack) { },
+    off: function (event, callBack) {
+        var eveObj = {
+            event: event,
+            callBack: callBack
+        };
+        eveObj.callBack = String(eveObj.callBack);
+        eveObj = JSON.stringify(eveObj);
+        for (var i = 0; i < this._events.length ; i++)
+        {
+            var aObj = {
+                event: this._events[i].event,
+                callBack: this._events[i].callBack
+            };
+            aObj.callBack = String(aObj.callBack);
+            aObj = JSON.stringify(aObj);            
+            if(eveObj==aObj)
+            {
+                this._events.splice(i, 1);
+            }
+        }
+    },
     /**
      * Dispach event
      * @abstract

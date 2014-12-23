@@ -72,6 +72,31 @@ utils.scriptLoader = function (scriptPath, callBack) {
     return this;
 
 };
+utils.compareObject = function (obj1, obj2) {
+    var aObj = {};
+    var bObj = {};
+    $.extend(aObj, obj1);
+    $.extend(bObj, obj2);
+    aObj = utils.convertObjectTotring(aObj);
+    bObj = utils.convertObjectTotring(bObj);
+    if(aObj==bObj)
+    {
+        return true;
+    } else {
+        return false;
+    }
+    
+};
+utils.convertObjectTotring = function (obj) {
+    var retObj = {};
+    $.extend(retObj, obj);
+    for (key in retObj) {
+        if (typeof (retObj[key]) == "function") {
+            retObj[key] = String(retObj[key]);
+        };
+    };
+    return JSON.stringify(retObj);
+};
 /**
  * Print console log
  * @param {object} str - String or Object

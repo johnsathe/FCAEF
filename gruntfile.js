@@ -1,5 +1,8 @@
 ﻿var releasePath = 'release';
-var jsFileArray = [releasePath + '/FCAEF/global/script/built/fcaef.js'];
+var jsFileArray = [
+    releasePath + '/FCAEF/global/script/built/fcaef.js',
+    releasePath + '/FCAEF/global/script/built/base.js'
+];
 var obfuscateObj={};
 obfuscateObj[releasePath+'/FCAEF/global/script/fcaef_min.js']=[releasePath+'/FCAEF/global/script/built.js'];
 
@@ -23,7 +26,7 @@ module.exports = function (grunt) {
                         var fileNameArray = String(srcpath).split('/');
                         if (fileNameArray[3] == 'script') {
                             if (fileNameArray[fileNameArray.length - 2] == 'fcaef') {
-                                if(fileNameArray[fileNameArray.length-1] != 'fcaef.js')
+                                if (fileNameArray[fileNameArray.length - 1] != 'fcaef.js' && fileNameArray[fileNameArray.length - 1] != 'base.js')
                                 {
                                     jsFileArray.push(releasePath + '/FCAEF/global/script/built/' + fileNameArray[fileNameArray.length - 1]);
                                 }

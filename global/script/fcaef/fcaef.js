@@ -15,8 +15,8 @@ fcaef.version = "0.1";
  * Init application
  */
 fcaef.init = function () {
-    fcaef.global = new fcaef.base();
 
+    fcaef.global = new fcaef.base();
     fcaef.global.registerEvent("REMOVE_EXTRAS");
     fcaef.global.registerEvent("TOGGLE_MENU");
     fcaef.global.registerEvent("NAVIGATE_TO_PAGEID");

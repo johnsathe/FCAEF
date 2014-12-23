@@ -244,4 +244,34 @@
 {
     padding-top:10px;
 }
+.margin-t(@value){margin-top:@value;}
+.margin-t5{.margin-t(5px);}
+.margin-t10{.margin-t(10px);}
+
+.margin-b(@value){margin-bottom:@value;}
+.margin-b5{.margin-t(5px);}
+.margin-b10{.margin-t(10px);}
+/* audi sync */
+.hideme{
+    opacity:0;
+}
+.showme{
+    opacity:1;
+}
+.animate(@property,@seconds)
+{
+    -moz-transition: @property @seconds;
+    -o-transition: @property @seconds;
+    -webkit-transition: @property @seconds;
+    transition: @property @seconds;
+}
+.fadeIn {
+    opacity:1;
+    .animate(opacity,1s);
+}
+.fadeOut {
+    opacity:0;
+    .animate(opacity,1s);
+}
+
 

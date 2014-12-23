@@ -1,9 +1,13 @@
-var screen = new fcaef.base();
-screen.templateData = [
+var page = new fcaef.base();
+page.templateData = [
  {
-     ID: "Txt1",
+     ID: "Page_3",
      Type: fcaef.templates.type.SINGLE_LINE,
-     Text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+     Text: [
+         {             ID: "Txt1",             Type: fcaef.templates.type.SINGLE_LINE,             Text: "The breadth and depth of the Advantage change effort highlighted the need for more robust business process management",             CSS: "page3_blueText margin-b5",         },
+         {             ID: "Txt2",             Type: fcaef.templates.type.SINGLE_LINE,             Text: "There was a need for several key enablers to improve chances of successful transformation and reduce the risks of such a large change effort, those key enablers included:",             CSS: "page3_blueText margin-b5",         },
+         {             ID: "Txt3",             Type: fcaef.templates.type.BULLET,       Text: [         {             ID: "Txt4",             Type: fcaef.templates.type.SINGLE_LINE,             Text: "A standard process framework to drive consistency and integration across work streams",             CSS: "page3_green margin-b5",         },       ],             CSS: "margin-b5",         },
+     ],
  }
 ];
-screen.init = function () { fcaef.renderer.render(screen.templateData); };
+page.init = function () { fcaef.renderer.render(page.templateData); };
