@@ -1,6 +1,8 @@
 ﻿body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  text-shadow: 0 0 0.5px #b2b1b1;
 }
 /* Widgets */
 /* Layout Widge */
@@ -86,6 +88,7 @@
   cursor: pointer;
   background-image: url('images/back.png');
   float: left;
+  margin-left: 20px;
 }
 #btnPrevious[disabled] {
   cursor: default;
@@ -103,17 +106,57 @@
   cursor: default;
   opacity: 0.6;
 }
+#btnReplay {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  background-image: url('images/replay.png');
+  float: left;
+  margin-left: 20px;
+}
+#btnReplay[disabled] {
+  cursor: default;
+  opacity: 0.6;
+}
+#btnPlayPause {
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  background-image: url('images/play.png');
+  float: left;
+  margin-left: 20px;
+}
+#btnPlayPause[disabled] {
+  cursor: default;
+  opacity: 0.6;
+}
+#btnPlayPause[playing] {
+  background-image: url('images/pause.png');
+}
 /* Audio */
 #btnAudio {
   width: 26px;
   height: 26px;
   background-image: url('images/audio_icon.png');
   margin: 2px 0 0 2px;
+  cursor: pointer;
+}
+#btnAudio[disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+#btnAudio[mute] {
+  background-image: url('images/audio_icon_off.png');
 }
 #txtAudioText {
   color: white;
   text-align: center;
   margin: 5px 0 0 0;
+  cursor: pointer;
+}
+#txtAudioText[disabled] {
+  cursor: default;
+  opacity: 0.5;
 }
 /* titles */
 #moduleNameHolder {
@@ -234,5 +277,12 @@
   -o-transition: opacity 1s;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
+}
+ul {
+  list-style: none;
+}
+ul li > div {
+  display: list-item;
+  list-style: disc;
 }
 /*# sourceMappingURL=default.css.map */

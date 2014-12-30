@@ -80,6 +80,15 @@ fcaef.parseResource=function()
         }
     };
 }
+fcaef.checkMode = function (mode) {
+    mode = "#" + mode;
+    if(document.location.hash.toString()==mode)
+    {
+        return true;
+    } else {
+        return false;
+    }
+};
 $(function () {
     fcaef.init();
 });

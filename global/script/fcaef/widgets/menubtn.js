@@ -5,7 +5,7 @@ menubtn.init = function () {
     var str = "";    
     str += "<div id=\"btnMenu\">";
     str += "    <div class=\"menuicon\"></div>";
-    str += "    <div class=\"menutext\">" + resources.string.global.menu + "</div>";
+    str += "    <div class=\"menutext\">" + resources.string.global.getString("menu") + "</div>";
     str += "    <div></div>";
     str += "</div>";
 

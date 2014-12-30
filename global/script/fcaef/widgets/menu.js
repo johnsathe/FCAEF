@@ -5,7 +5,7 @@ menu._defState = "close";
 menu.init = function () {
     $("body").append("<div id=\"menuholder\"></div>");
     var holder = menu.$menuholder = $("#menuholder");
-    holder.append("<div class=\"title\">" + resources.string.global.menu + "</div>");
+    holder.append("<div class=\"title\">" + resources.string.global.getString("menu") + "</div>");
     holder.append("<div id=\"menulistholder\"><div class=\"list\"></div></div>");
 
     var listHolder = this.$listholder = $("#menulistholder .list");

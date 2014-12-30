@@ -1,7 +1,7 @@
 ﻿fcaef.templateBullet = new fcaef.base();
 fcaef.templateBullet.init = function () {
     fcaef.templates.regesterTemplate("BULLET", this);
-    log("Template -> SingleLine... Loaded");
+    log("Template -> Bullet... Loaded");
 };
 fcaef.templateBullet.render = function (obj) {
     var $retObj = $("<div></div>");
